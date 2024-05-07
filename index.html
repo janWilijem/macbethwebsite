@@ -1,0 +1,173 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <title>The Cauldron</title>
+    <link href="css/brand.css" rel="stylesheet">
+    <link href="icon-scissors-32.gif" rel="icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+
+  <body class="cave">
+    <header role="banner">
+      <div id="branding-wrapper">
+        <h1>Double, double toil and trouble;
+          <br>Fire burn and caldron bubble.
+        </h1>
+        <a href="#main-content" id="skip-link">Skip to main content</a>
+      </div>
+      <nav role="navigation">
+        <label for="nav-box" id="nav-trigger">Menu</label>
+        <input id="nav-box" type="checkbox">
+        <ul>
+          <li><a href="index.html" id="current-page">Foggy Cave</a></li>
+          <li><a href="castle.html">Castle Gate</a></li>
+          <li><a href="bathroom.html">Washroom</a></li>
+          <li><a href="appointments.html">Cave Appointments</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div id="wrapper">
+      <main id="main-content" tabindex="-1" role="main">
+        <div>
+          <img id="cabinet" src="images/cabinet.png" width="400" height="300" alt="A bubbling cauldron">
+        </div>
+        <section>
+          <h1 id="smoke">Gaze upon the ingredient cabinet, and choose wisely...</h2>
+          <ul id="shuffleAndSort">
+            <li id="li-1"><button id="top" onclick="wrongIngredient()">The finest of wines</button><br></li>
+            <li id="li-2"><button id="mid" onclick="shuffleNodes()">Fillet of a fenny snake</button><br></li>
+            <li id="li-3"><button id="bot" onclick="wrongIngredient()">Sparkling stardust</button><br></li>
+          </ul>
+          <p id="visions"></p>
+        </section>
+      </main>
+
+      <aside role="complementary">
+        <h2>Cast the correct ingredients into the cauldron to reveal the future...</h2>
+        <div>
+          <img src="images/cauldron.png" width="500" height="500" alt="A bubbling cauldron">
+        </div>
+      </aside>
+
+      <footer role="contentinfo">
+        <p><small><i>All material &copy; Hecate, Goddess of Witchcraft</i></small></p>
+      </footer>
+
+      <script>
+        var count = 0;
+
+        function wrongIngredient() {
+          document.getElementById("top").innerHTML = "The finest of wines";
+          document.getElementById("mid").innerHTML = "Fillet of a fenny snake";
+          document.getElementById("bot").innerHTML = "Sparkling stardust";
+          document.getElementById("smoke").innerHTML = "The cauldron screams and shakes. That was certainly incorrect.";
+
+          count = 0
+        }
+
+        window.onload = function () {
+          var list = document.getElementById("shuffleAndSort"),
+            button = document.getElementById("mid");
+          function shuffle(items) {
+            var cached = items.slice(0), temp, i = cached.length, rand;
+            while (--i) {
+              rand = Math.floor(i * Math.random());
+              temp = cached[rand];
+              cached[rand] = cached[i];
+              cached[i] = temp;
+            }
+            return cached;
+          }
+          function shuffleNodes() {
+            var nodes = list.children, i = 0;
+            nodes = Array.prototype.slice.call(nodes);
+            nodes = shuffle(nodes);
+            while (i < nodes.length) {
+              list.appendChild(nodes[i]);
+              ++i;
+            }
+            if (count === 0) {
+              document.getElementById("top").innerHTML = "Potent moonshine";
+              document.getElementById("mid").innerHTML = "Eye of newt";
+              document.getElementById("bot").innerHTML = "Witch's nose";
+              document.getElementById("smoke").innerHTML = "The cauldron boils softly, awaiting the next ingredient.";
+
+            }
+            if (count === 1) {
+              document.getElementById("top").innerHTML = "Lion's tail";
+              document.getElementById("mid").innerHTML = "Toe of frog";
+              document.getElementById("bot").innerHTML = "River rocks";
+              document.getElementById("smoke").innerHTML = "The cauldron bubbles some more.";
+            }
+            if (count === 2) {
+              document.getElementById("top").innerHTML = "Sheep's foot";
+              document.getElementById("mid").innerHTML = "Wool of bat";
+              document.getElementById("bot").innerHTML = "Cask of fire";
+              document.getElementById("smoke").innerHTML = "The liquid within the cauldron changes to a deep orange...";
+            }
+            if (count === 3) {
+              document.getElementById("top").innerHTML = "Camel's back";
+              document.getElementById("mid").innerHTML = "Tongue of dog";
+              document.getElementById("bot").innerHTML = "Moist spaghetti";
+              document.getElementById("smoke").innerHTML = "The cauldron begins violently steaming.";
+            }
+            if (count === 4) {
+              document.getElementById("top").innerHTML = "Viking's mead";
+              document.getElementById("mid").innerHTML = "Adder's fork";
+              document.getElementById("bot").innerHTML = "Flock of seagulls";
+              document.getElementById("smoke").innerHTML = "You hear a faint hiss from within the cauldron, or was it a scream?";
+            }
+            if (count === 5) {
+              document.getElementById("top").innerHTML = "Stinky socks";
+              document.getElementById("mid").innerHTML = "Blind-worm's sting";
+              document.getElementById("bot").innerHTML = "Bear's paw";
+              document.getElementById("smoke").innerHTML = "The entire room is suddenly several degrees hotter.";
+            }
+            if (count === 6) {
+              document.getElementById("top").innerHTML = "An entire deer";
+              document.getElementById("mid").innerHTML = "Lizard's leg";
+              document.getElementById("bot").innerHTML = "Brain of koi";
+              document.getElementById("smoke").innerHTML = "You swear that you can hear things scurrying in the shadows...";
+            }
+            if (count === 7) {
+              document.getElementById("top").innerHTML = "Smelling salts";
+              document.getElementById("mid").innerHTML = "Howlet's wing";
+              document.getElementById("bot").innerHTML = "Ash of the mountain";
+              document.getElementById("smoke").innerHTML = "The cauldron's wailing drowns out every sound you have ever heard.";
+            }
+            if (count === 8) {
+              document.getElementById("top").innerHTML = "Cool it with water";
+              document.getElementById("mid").innerHTML = "Cool it with baboon's blood";
+              document.getElementById("bot").innerHTML = "Cool it with alcohol";
+              document.getElementById("smoke").innerHTML = "The cauldron is boiling over! Cool it down with something!";
+              
+            }
+            count += 1;
+            if (count === 10) {
+              const toprow = document.getElementById("li-1");
+              toprow.remove();
+              const middlerow = document.getElementById("li-2");
+              middlerow.remove();
+              const bottomrow = document.getElementById("li-3");
+              bottomrow.remove();
+              const cabinetrow = document.getElementById("cabinet");
+              cabinetrow.remove();
+              document.getElementById("smoke").innerHTML = "The cauldron sings and bubbles. Visions of the future fill your mind...";
+              document.getElementById("visions").innerHTML = "The first vision  shows you a head warning of a man named Macduff.<br><br>The herald of the second vision claims you cannot be slain by one of woman born, you are suddenly and inexplicably frightened by the notion of a c-section.<br><br> The third vision's orator claims that you will not be vanquished until the Great Birnam wood reaches your castle. The thought of trees with legs briefly crosses your mind.<br><br> The final vision is that of a parade of 9 men. The one in the rear looks somewhat familiar...<br><br>";
+
+            }
+
+          }
+          document.getElementById("mid").onclick = shuffleNodes;
+        } 
+      </script>
+    </div>
+
+
+
+  </body>
+
+</html>

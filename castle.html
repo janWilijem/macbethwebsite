@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Castle Gates</title>
+    <link href="css/brand.css" rel="stylesheet">
+    <link href="icon-scissors-32.gif" rel="icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+
+  <body class="castle">
+    <header role="banner">
+      <div id="branding-wrapper">
+        <h1>Castle Gates</h1>
+        <a href="#main-content" id="skip-link">Skip to main content</a>
+      </div>
+      <nav role="navigation">
+        <label for="nav-box" id="nav-trigger">Menu</label>
+        <input id="nav-box" type="checkbox">
+        <ul>
+          <li><a href="index.html">Foggy Cave</a></li>
+          <li><a href="castle.html" id="current-page">Castle Gate</a></li>
+          <li><a href="bathroom.html">Washroom</a></li>
+          <li><a href="appointments.html">Cave Appointments</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div id="wrapper">
+      <main id="main-content" tabindex="-1" role="main">
+
+        <section>
+          <h2>New News!</h2>
+          <p>Horses eating each other? More likely than you think! Hear all about it in the Inverness Post!</p>
+          <p>King Macbeth has strange episode during meeting with other nobels?Read more about in today's Scots Inquirer!</p>
+          <p>Fleance missing presumed dead! After his father's shocking death, his son Fleance remains unaccounted for. This and more will be discussed tomorrow in the Weekly Highlander!</p>
+        </section>
+
+
+      </main>
+
+      <aside role="complementary">
+        <section>
+          <h2>Hear ye, hear ye!</h2>
+          <p>The cowardly sons of our recently deceased and much beloved King Duncan have fled Scotland! Sign your name below and send a pigeon to King Macbeth if you think they were involved in his royal majesty's brutal killing for a chance to receive free rocks at their stoning!</p>
+
+
+          <form action="unit-3-form-handler.html" method="get" role="form" id="voting-form">
+            <fieldset>
+              <legend>Fields marked with an asterisk (*) are required</legend>
+              <fieldset>
+                <legend>Select One (1)</legend>
+                <input type="radio" name="vote" id="black-vote" value="black-vote" required>
+                <label for="black-vote">*They Did It!</label><br>
+
+                <input type="radio" name="vote" id="blue-vote" value="blue-vote" required>
+                <label for="blue-vote" class="redvote">*They Did It But in Red!</label><br>
+              </fieldset>
+
+              <label for="vote-email">*Pigeon Box</label>
+              <input type="email" id="vote-email" name="vote-email" required><br>
+
+              <input type="submit" value="Send!">
+            </fieldset>
+          </form>
+        </section>
+      </aside>
+
+      <footer role="contentinfo">
+        <p><small><i>All material &copy; His Majesty KIng Macbeth</i></small></p>
+      </footer>
+    </div>
+  </body>
+
+</html>

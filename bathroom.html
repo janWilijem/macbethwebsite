@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Castle Bathroom</title>
+    <link href="css/brand.css" rel="stylesheet">
+    <link href="icon-scissors-32.gif" rel="icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+
+  <body class="washroom">
+    <header role="banner">
+      <div id="branding-wrapper">
+        <h1>Castle Washroom</h1>
+        <a href="#main-content" id="skip-link">Skip to main content</a>
+      </div>
+      <nav role="navigation">
+        <label for="nav-box" id="nav-trigger">Menu</label>
+        <input id="nav-box" type="checkbox">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="castle.html">Castle Gate</a></li>
+          <li><a href="bathroom.html" id="current-page">Washroom</a></li>
+          <li><a href="appointments.html">Appointments</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div id="wrapper">
+      <main id="main-content" tabindex="-1" role="main">
+
+        <div>
+          <div>
+            <img src="images/hands.png" width="540" height="360" alt="Bloodied hand">
+            <p id="unclean">Your hands are caked with blood, you need to wash them.</p>
+          </div>
+          <ul>
+            <li id="li-1"><button id="top" onclick="sink()">Wash your hands</button><br></li>
+          </ul>
+        </div>
+        <div>
+          <p>Will they ever be clean? How can they ever be clean?!</p>
+        </div>
+
+
+      </main>
+
+      <aside role="complementary">
+        <section id="farmers-market">
+
+          <p>You really did it! You still cannot believe it yourself! Oh my god you really did it? It was days ago but how can one come to terms with such an action? King Duncan really is dead and buried. And now your Queen! But you really did it, and your hands are so unclean you should really wash them...</p>
+        </section>
+      </aside>
+
+      <footer role="contentinfo">
+        <p><small><i>All material &copy; Her Highness Queen Macbeth</i></small></p>
+      </footer>
+    </div>
+  </body>
+
+  <script>
+    var count = 0;
+
+    function sink() {
+      if (count === 0) {
+      document.getElementById("unclean").innerHTML = "Your hands are just as bloody as before...";
+      }
+      if (count === 1) {
+      document.getElementById("unclean").innerHTML = "Your hands are still cherry red, why aren't they clean?";
+      }
+      if (count === 2) {
+      document.getElementById("unclean").innerHTML = "They are still not clean.";
+      }
+      if (count === 3) {
+      document.getElementById("unclean").innerHTML = "Why are they still clean???";
+      }
+      if (count === 4) {
+      document.getElementById("unclean").innerHTML = "WHY WON'T THE BLOOD WASH OFF?!";
+      }
+      if (count === 5) {
+      document.getElementById("unclean").innerHTML = "GET IT OFF!";
+      }
+      if (count === 6) {
+      document.getElementById("unclean").innerHTML = "What have you done?";
+      count = 0
+      }
+      count +=1
+    }
+  </script>
+
+</html>
